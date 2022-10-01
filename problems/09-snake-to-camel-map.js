@@ -16,13 +16,21 @@ console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 */
 
 function snakeToCamel(str) {
-    // Your code here
+    let camel = str.split('_')         //['snakes', 'go', 'hiss']
+    let upper = camel.map(function(el){
+        el = el.toLowerCase()
+        return el[0].toUpperCase() + el.slice(1);
+    })
+    return upper.join('')
 }
-
+console.log(snakeToCamel('snakes_go_hiss')); // 'SnakesGoHiss'
+console.log(snakeToCamel('say_hello_world')); // 'SayHelloWorld'
+console.log(snakeToCamel('app_academy_is_cool')); // 'AppAcademyIsCool'
+console.log(snakeToCamel('APp_ACADEMY_iS_cOol')); // 'AppAcademyIsCool'
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
     module.exports = snakeToCamel;
 } catch (e) {
     module.exports = null;
-}
+}

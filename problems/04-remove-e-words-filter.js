@@ -13,7 +13,11 @@ console.log(removeEWords('Enter the building')); // 'building'
 */
 
 let removeEWords = function(sentence) {
-    // Your code here
+  let arr = sentence.split(' ')       //['What', 'time', 'is', 'it', 'everyone?']
+      let remove = arr.filter(function(ele){
+          return !ele.includes('e');
+      })
+      return remove.join(' ')
 };
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
@@ -22,4 +26,4 @@ try {
   module.exports = removeEWords;
 } catch (e) {
   module.exports = null;
-}
+}
